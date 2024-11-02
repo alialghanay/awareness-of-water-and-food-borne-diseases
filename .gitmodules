@@ -1,0 +1,3 @@
+[submodule "server/awareness-of-water-and-food-borne-diseass"]
+	path = server/awareness-of-water-and-food-borne-diseass
+	url = https://github.com/alialghanay/awareness-of-water-and-food-borne-diseass-cms.git
