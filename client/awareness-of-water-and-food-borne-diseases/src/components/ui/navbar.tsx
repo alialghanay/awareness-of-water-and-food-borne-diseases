@@ -19,7 +19,9 @@ const NavBar = () => {
           {pages.map((page, index) => (
             <li
               key={index}
-              className={pathname == page.url ? "text-primary" : ""}
+              className={
+                pathname == page.url ? "text-primary" : "hover:text-primary"
+              }
             >
               <Link href={page.url}>{page.title}</Link>
             </li>
