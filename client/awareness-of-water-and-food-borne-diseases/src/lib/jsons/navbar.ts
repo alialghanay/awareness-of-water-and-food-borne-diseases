@@ -7,6 +7,10 @@ export default {
   ar: {
     pages: [
       {
+        title: "الرئيسية",
+        url: "/",
+      },
+      {
         title: "مواد العلمية",
         url: "/scientific-materials",
       },
@@ -16,7 +20,7 @@ export default {
       },
       {
         title: "ادعمنا",
-        url: "/support-us",
+        url: "https://www.paypal.com",
       },
       {
         title: "من نحن؟",
@@ -27,6 +31,10 @@ export default {
   en: {
     pages: [
       {
+        title: "Home",
+        url: "/",
+      },
+      {
         title: "Scientific Materials",
         url: "/scientific-materials",
       },
@@ -36,7 +44,7 @@ export default {
       },
       {
         title: "Support Us",
-        url: "/support-us",
+        url: "https://www.paypal.com",
       },
       {
         title: "About Us",

@@ -1,5 +1,5 @@
 declare module "localization" {
-  type availableLanguages = "en" | "ar";
+  export type availableLanguages = "en" | "ar";
   type locale = {
     [key: string]: string;
   };

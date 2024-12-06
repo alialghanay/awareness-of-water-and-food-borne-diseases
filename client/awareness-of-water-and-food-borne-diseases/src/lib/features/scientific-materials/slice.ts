@@ -1,0 +1,73 @@
+import { createSlice } from "@reduxjs/toolkit";
+import { IScientificMaterialsState } from "state";
+import {
+  GetHealthEducation,
+  GetTopics,
+  GetTransmissionOfInfection,
+  GetTreatmentAndPrevention,
+} from "./action";
+
+const initialState: IScientificMaterialsState = {
+  isLoading: false,
+  error: null,
+  healthEducation: null,
+  topics: [],
+  transmissionOfInfection: null,
+  treatmentAndPrevention: null,
+};
+
+export const scientificMaterialsSlice = createSlice({
+  name: "scientificMaterials",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(GetHealthEducation.fulfilled, (state, action) => {
+        state.healthEducation = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(GetHealthEducation.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(GetHealthEducation.rejected, (state, action) => {
+        console.log(action.error);
+        state.error = "Error";
+        state.isLoading = false;
+      })
+      .addCase(GetTopics.fulfilled, (state, action) => {
+        state.topics = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(GetTopics.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(GetTopics.rejected, (state) => {
+        state.error = "Error";
+        state.isLoading = false;
+      })
+      .addCase(GetTransmissionOfInfection.fulfilled, (state, action) => {
+        state.transmissionOfInfection = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(GetTransmissionOfInfection.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(GetTransmissionOfInfection.rejected, (state) => {
+        state.error = "Error";
+        state.isLoading = false;
+      })
+      .addCase(GetTreatmentAndPrevention.fulfilled, (state, action) => {
+        state.treatmentAndPrevention = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(GetTreatmentAndPrevention.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(GetTreatmentAndPrevention.rejected, (state) => {
+        state.error = "Error";
+        state.isLoading = false;
+      });
+  },
+});
+
+export default scientificMaterialsSlice.reducer;

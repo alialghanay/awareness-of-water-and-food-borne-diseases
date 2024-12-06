@@ -1,24 +1,22 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import RichTextRenderer from "@/components/ui/richtext-render/richtext-render";
+import SectionTitle from "@/components/ui/section-title";
+import { useAppSelector } from "@/hooks/redux";
+import { Spinner } from "@nextui-org/spinner";
 
 const Goals = () => {
+  const { goal, isLoading } = useAppSelector((state) => state.home);
+  if (!goal || isLoading)
+    return (
+      <div className="flex justify-center items-center">
+        <Spinner size="lg" />
+      </div>
+    );
   return (
     <div className="flex flex-col gap-14 p-8">
-      <h1 className="text-4xl font-bold">هدفنا:</h1>
-      <ul className="list-disc marker:text-primary">
-        <li>
-          نشر الوعي الصحي بين النازحين في مراكز الإيواء بقطاع غزة والضفة
-          الغربية.
-        </li>
-        <li>
-          ترتكز الحملة على تقديم محاضرات، جلسات حوارية، وتوزيع مستلزمات النظافة
-          الشخصية، بتنسيق مع إدارات المراكز ومجموعة من المختصين والمتطوعين.
-        </li>
-        <li>
-          يشمل البرنامج تدريب متطوعين مركزيين لتكوين فرق توعوية من النازحين
-          أنفسهم لضمان استمرارية التوعية، مع توفير أدوات صحية ومستلزمات دعم
-          للفرق والمشاركين لتعزيز بيئة صحية آمنة قدر الإمكان.
-        </li>
-      </ul>
+      <SectionTitle title={goal.title} />
+      <RichTextRenderer document={goal.content} />
       <Button>اعرف المزيد عن مهمتنـا</Button>
     </div>
   );
