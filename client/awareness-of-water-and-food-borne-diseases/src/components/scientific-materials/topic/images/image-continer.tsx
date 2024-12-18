@@ -7,9 +7,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
-import ImageViewer from "../ui/image-viewer";
-import Pagination from "../ui/pagination";
 import { IStrapiImage } from "general";
+import ImageViewer from "@/components/events/ui/image-viewer";
+import Pagination from "@/components/events/ui/pagination";
 
 interface ImageProps {
   images: IStrapiImage[];
@@ -31,7 +31,10 @@ const ImagesContiner = ({ images }: ImageProps) => {
     });
   }, [api]);
   return (
-    <div dir="ltr" className="flex flex-col justify-center items-center gap-2">
+    <div
+      dir="ltr"
+      className="flex flex-col justify-center items-center my-4 md:my-8 lg:my-16"
+    >
       <Carousel setApi={setApi}>
         <CarouselContent>
           {images.map((image, index) => (

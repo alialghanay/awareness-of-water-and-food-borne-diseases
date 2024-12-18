@@ -14,10 +14,18 @@ const Goals = () => {
       </div>
     );
   return (
-    <div className="flex flex-col gap-14 p-8">
+    <div className="flex flex-col gap-7 p-4 md:p-8 lg:p-16">
       <SectionTitle title={goal.title} />
       <RichTextRenderer document={goal.content} />
-      <Button>اعرف المزيد عن مهمتنـا</Button>
+      <div className="w-full flex justify-center items-center">
+        <Button
+          size="sm"
+          variant="costum"
+          className="border border-primary text-primary"
+        >
+          اعرف المزيد عن مهمتنـا
+        </Button>
+      </div>
     </div>
   );
 };

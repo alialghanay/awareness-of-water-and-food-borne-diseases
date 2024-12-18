@@ -4,7 +4,7 @@ import { useAppSelector } from "@/hooks/redux";
 import { Spinner } from "@nextui-org/spinner";
 
 const KnowledgeUi = () => {
-  const { error, isLoading, testYourKnowlodge } = useAppSelector(
+  const { isLoading, testYourKnowlodge } = useAppSelector(
     (state) => state.events
   );
   if (isLoading || !testYourKnowlodge)

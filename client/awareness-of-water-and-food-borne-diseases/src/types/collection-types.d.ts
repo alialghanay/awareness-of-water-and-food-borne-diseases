@@ -26,14 +26,23 @@ declare module "collection-types" {
   }
   export interface ITopic {
     id: number;
+    documentId: string;
     title: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    locale: string;
     brief_description: string;
     description: string;
-    brief_description: IContentNode;
-    image: IStrapiImage;
-    icon: IStrapiImage;
+    sections: string;
     image_title: string;
-    attachments: null;
+    icon: IStrapiImage;
+    image: IStrapiImage[] | null;
+    attachment: null;
   }
-  export interface IVideosAndPlays {}
+  export interface IVideosAndPlays {
+    id: number;
+    title: string;
+    video: IStrapiImage;
+  }
 }

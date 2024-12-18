@@ -5,17 +5,17 @@ import { IBanner } from "general";
 const Banner = ({ description, src, isLoading }: IBanner) => {
   if (isLoading || !src || !description)
     return (
-      <div className="relative w-full overflow-hidden flex justify-center items-center h-[400px] md:h-[500px] lg:h-[600px]">
+      <div className="relative w-full overflow-hidden flex justify-center items-center h-[178px] md:h-[480px] lg:h-[720px]">
         <Spinner size="lg" />
       </div>
     );
 
   return (
-    <div className="relative w-full overflow-hidden flex justify-center items-center h-[400px] md:h-[500px] lg:h-[600px]">
+    <div className="relative w-full overflow-hidden flex justify-center items-center h-[178px] md:h-[480px] lg:h-[720px]">
       <Image
         src={process.env.IMAGE_URL + src}
         alt="banner"
-        className="object-cover w-full h-full blur-sm mix-blend-multiply"
+        className="object-cover w-full h-full mix-blend-multiply"
         isBlurred={true}
       />
 

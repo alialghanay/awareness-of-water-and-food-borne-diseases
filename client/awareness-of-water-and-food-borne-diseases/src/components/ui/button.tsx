@@ -20,6 +20,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         costum:
           "bg-gradient-to-br from-white to-[#DDE6CF] hover:from-[#DDE6CF] hover:to-white",
+        costum2:
+          "bg-gradient-to-r from-[#7DA537] to-[#64842C] hover:from-[#64842C] hover:to-[#7DA537]",
       },
       size: {
         default: "h-10 px-4 py-2",

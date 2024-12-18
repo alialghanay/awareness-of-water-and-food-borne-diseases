@@ -37,7 +37,4 @@ declare module "promises" {
   export interface StrapiErrorResponse {
     data: StrapiError;
   }
-
-  export interface CampaignDefinitionRespon
-    extends StrapiBaseResponse<ICampaignDefinition> {}
 }

@@ -1,6 +1,6 @@
 import { IPagination } from "general";
 import Dot from "./dot";
-const Pagination = ({ count, currentPage, setCurrentPage }: IPagination) => {
+const Pagination = ({ count, currentPage }: IPagination) => {
   return (
     <div className="flex justify-center items-center gap-5 p-2">
       {Array(count)

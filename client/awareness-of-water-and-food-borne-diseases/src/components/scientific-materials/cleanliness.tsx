@@ -2,12 +2,15 @@
 import { useRouter } from "next/navigation";
 import Card from "../ui/card";
 import SectionTitle from "../ui/section-title";
-import { useAppSelector } from "@/hooks/redux";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { Spinner } from "@nextui-org/spinner";
+import { getTopic } from "@/lib/features/scientific-materials/slice";
+import { ITopic } from "collection-types";
 
 const Cleanliness = () => {
   const router = useRouter();
-  const { isLoading, error, topics } = useAppSelector(
+  const dispacth = useAppDispatch();
+  const { isLoading, topics } = useAppSelector(
     (state) => state.scientificMaterials
   );
   if (isLoading || topics.length === 0)
@@ -16,10 +19,14 @@ const Cleanliness = () => {
         <Spinner size="lg" />
       </div>
     );
+  const handleUrlClick = async (topic: ITopic) => {
+    await dispacth(getTopic(topic));
+    router.push(`/scientific-materials/${topic.id}`);
+  };
   return (
-    <div className="p-12">
+    <div className="p-4 md:p-8 lg:p-16">
       <SectionTitle
-        className="text-4xl font-bold my-6"
+        className="text-2xl md:text-4xl font-bold my-8 md:my-12"
         title="النظافة الشخصية:"
       />
       <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-14">
@@ -29,7 +36,7 @@ const Cleanliness = () => {
             image={topic.icon.url}
             title={topic.title}
             description={topic.brief_description}
-            onUrlClick={() => router.push(`/scientific-materials/${topic.id}`)}
+            onUrlClick={() => handleUrlClick(topic)}
           />
         ))}
       </div>

@@ -1,21 +1,35 @@
-import { IContentNode } from "general";
+import { IContentNode, IListItemNode } from "general";
 import renderTextNode from "./render-text-node";
 
-const renderContent = (content: IContentNode) => {
+const renderContent = (content: IContentNode | IListItemNode) => {
   if (content.type === "paragraph") {
+    const onlyTextNodes = content.children.every(
+      (child) => child.type === "text"
+    );
+
+    if (onlyTextNodes) {
+      return (
+        <p>
+          {content.children.map((child, idx) =>
+            child.type === "text" ? renderTextNode(child, idx) : null
+          )}
+        </p>
+      );
+    }
+
     return (
-      <p className="mb-4">
+      <div>
         {content.children.map((child, idx) =>
           child.type === "text" ? renderTextNode(child, idx) : null
         )}
-      </p>
+      </div>
     );
   }
 
   if (content.type === "list") {
     const ListTag = content.format === "ordered" ? "ol" : "ul";
     return (
-      <ListTag className="llist-disc  list-inside list-disc marker:text-primary">
+      <ListTag className="list-disc list-inside marker:text-primary">
         {content.children.map((child, index) => {
           if (child.type === "list-item") {
             return (

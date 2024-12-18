@@ -5,7 +5,7 @@ import { useAppSelector } from "@/hooks/redux";
 import { Spinner } from "@nextui-org/spinner";
 
 const ImagesUi = () => {
-  const { eventDocumentation, isLoading, error } = useAppSelector(
+  const { eventDocumentation, isLoading } = useAppSelector(
     (state) => state.events
   );
   if (!eventDocumentation || isLoading)
@@ -15,7 +15,7 @@ const ImagesUi = () => {
       </div>
     );
   return (
-    <div>
+    <div className="">
       <SectionTitle title="توثيق الفعاليات:" />
       <ImagesContiner images={eventDocumentation.images} />
     </div>

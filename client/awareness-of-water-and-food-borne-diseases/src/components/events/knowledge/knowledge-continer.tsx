@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import ImageViewer from "../ui/image-viewer";
 import Pagination from "../ui/pagination";
 import { IStrapiImage } from "general";
-const array = [1, 2, 3, 4, 5];
 
 interface KnowledgeContinerProps {
   images: IStrapiImage[];
@@ -35,7 +34,7 @@ const KnowledgeContiner = ({ images }: KnowledgeContinerProps) => {
     });
   }, [api]);
   return (
-    <div dir="ltr">
+    <div dir="ltr" className="flex flex-col justify-center items-center gap-2">
       <Carousel setApi={setApi}>
         <CarouselContent>
           {images.map((image, index) => (

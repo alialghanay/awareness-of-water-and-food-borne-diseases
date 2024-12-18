@@ -6,7 +6,7 @@ const Partners = () => {
   const { partners, isLoading } = useAppSelector((state) => state.home);
   if (!partners || isLoading) return null;
   return (
-    <div>
+    <div className="p-4 md:p-8 lg:p-16">
       <SectionTitle title="شركائنا:" />
       <div className="flex justify-between items-center">
         {partners.image.map((partner) => (

@@ -3,7 +3,7 @@ import { FaTelegram } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 
-export default {
+const navbar = {
   ar: {
     pages: [
       {
@@ -75,3 +75,5 @@ export default {
     },
   ],
 };
+
+export default navbar;

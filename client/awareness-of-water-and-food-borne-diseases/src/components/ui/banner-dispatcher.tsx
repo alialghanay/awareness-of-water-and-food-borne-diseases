@@ -3,8 +3,9 @@
 import { useEffect } from "react";
 import { useAppDispatch } from "@/hooks/redux";
 import { setBanner } from "@/lib/features/slice";
+import { IBanner } from "collection-types";
 
-const BannerDispatcher = ({ banner }: { banner: any }) => {
+const BannerDispatcher = ({ banner }: { banner: IBanner[] }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {

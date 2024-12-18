@@ -32,9 +32,9 @@ declare module "state" {
     campaignDefinition: ICampaignDefinition | null;
   }
   export interface IEventsState extends IState {
-    reports: IReport | null;
+    reports: IReport[];
     eventDocumentation: IEventDocumentation | null;
-    videosAndPlays: IVideosAndPlays | null;
+    videosAndPlays: IVideosAndPlays[];
     testYourKnowlodge: ITestYourKnowlodge | null;
   }
   export interface IScientificMaterialsState extends IState {
@@ -42,6 +42,7 @@ declare module "state" {
     topics: ITopic[];
     transmissionOfInfection: ITransmissionOfInfection | null;
     treatmentAndPrevention: ITreatmentAndPrevention | null;
+    topic: ITopic | null;
   }
   export interface IAboutUsState extends IState {
     sections: IAboutUs[];

@@ -32,7 +32,7 @@ const NavBar = () => {
       <aside
         className={`fixed bottom-0 left-0 w-full bg-card rounded-t-2xl shadow transform transition-all duration-500 ease-in-out ${
           isOpen ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
-        } h-[85dvh] z-20 flex flex-col justify-between items-center p-4`}
+        } h-[85dvh] z-40 flex flex-col justify-between items-center p-4`}
       >
         {/* Logo & routes */}
         <div className="flex flex-col justify-center items-center gap-6">

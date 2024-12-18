@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { AppDispatch } from "@/lib/store";
 import { AsyncThunkAction } from "@reduxjs/toolkit";
 

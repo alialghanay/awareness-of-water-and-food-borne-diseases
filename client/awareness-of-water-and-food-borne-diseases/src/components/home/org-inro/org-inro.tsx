@@ -8,21 +8,23 @@ const OrgIntro = () => {
   );
   if (!campaignDefinition || isLoading)
     return (
-      <div className="relative w-full overflow-hidden flex justify-center items-center h-[400px] md:h-[500px] lg:h-[600px]">
+      <div className="relative w-full overflow-hidden flex justify-center items-center h-[178px] md:h-[480px] lg:h-[720px]">
         <Spinner size="lg" />
       </div>
     );
   return (
-    <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden flex justify-center items-center">
+    <div className="relative w-full h-[180x] md:h-[480px] lg:h-[720px] overflow-hidden flex justify-center items-center my-4">
       <Image
         src="/promo.png"
         alt="org-intro"
         className="object-cover w-full h-full"
       />
-      <div className="absolute bg-primary bg-opacity-5 text-white p-4 z-20">
-        <p className="text-sm md:text-base lg:text-lg">
+      <div className="absolute text-white z-20 flex justify-between items-center p-2">
+        <div className="w-1/6 md:1/4"></div>
+        <p className="text-[9px] md:text-sm lg:text-xl bg-[#7DA537]/70 p-2 md: w-1/2 rounded-lg md:leading-relaxed">
           {campaignDefinition?.definition}
         </p>
+        <div className="w-1/2 md:w-full"></div>
       </div>
     </div>
   );

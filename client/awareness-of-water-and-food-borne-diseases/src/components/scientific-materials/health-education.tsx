@@ -5,7 +5,7 @@ import { Spinner } from "@nextui-org/spinner";
 import RichTextRenderer from "../ui/richtext-render/richtext-render";
 
 const HealthEducation = () => {
-  const { healthEducation, error, isLoading } = useAppSelector(
+  const { healthEducation, isLoading } = useAppSelector(
     (state) => state.scientificMaterials
   );
   if (isLoading || !healthEducation)
@@ -15,10 +15,14 @@ const HealthEducation = () => {
       </div>
     );
   return (
-    <div className="bg-primary-foreground flex flex-col gap-14 p-8">
+    <div className="bg-primary-foreground flex flex-col gap-7 p-4 md:p-8 lg:p-16">
       <SectionTitle title={healthEducation.title} />
       <RichTextRenderer document={healthEducation.content} />
-      <Button variant="costum">تعلم أكثـــر</Button>
+      <div className="w-full flex justify-center items-center">
+        <Button variant="costum" className="border border-primary text-primary">
+          تعلم أكثـــر
+        </Button>
+      </div>
     </div>
   );
 };

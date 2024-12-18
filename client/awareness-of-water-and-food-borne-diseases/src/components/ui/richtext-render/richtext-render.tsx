@@ -9,7 +9,9 @@ const RichTextRenderer = ({ document }: DocumentProps) => {
   return (
     <>
       {document.map((content, idx) => (
-        <div key={idx}>{renderContent(content)}</div>
+        <div className="flex flex-col" key={idx}>
+          {renderContent(content)}
+        </div>
       ))}
     </>
   );

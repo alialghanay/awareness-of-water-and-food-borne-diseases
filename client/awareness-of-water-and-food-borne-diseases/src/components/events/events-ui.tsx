@@ -14,16 +14,16 @@ import {
 } from "@/lib/features/events/action";
 
 const EventsUi = () => {
-  const { banner, isLoading } = useAppSelector((state) => state.global);
+  const { banner } = useAppSelector((state) => state.global);
   const dispacth = useAppDispatch();
   useEffect(() => {
     dispacth(GetEventDocumentation());
     dispacth(GetReports());
     dispacth(GetTestYourKnowlodge());
     dispacth(GetVideosAndPlays());
-  }, []);
+  }, [dispacth]);
   return (
-    <div>
+    <section>
       <Banner
         src={banner[2]?.background.url}
         description={banner[2]?.description}
@@ -32,7 +32,7 @@ const EventsUi = () => {
       <ImagesUi />
       <VideosUi />
       <KnowledgeUi />
-    </div>
+    </section>
   );
 };
 

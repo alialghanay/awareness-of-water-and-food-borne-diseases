@@ -19,7 +19,7 @@ const HomeUi = () => {
     dispatch(GetGoal());
     dispatch(GetPartners());
     dispatch(GetCampaignDefinition());
-  }, []);
+  }, [dispatch]);
   return (
     <section>
       <Banner

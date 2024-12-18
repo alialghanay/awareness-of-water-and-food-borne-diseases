@@ -14,24 +14,24 @@ const AboutUsUi = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(GetSections());
-  }, []);
+  }, [dispatch]);
   const { banner, isLoading } = useAppSelector((state) => state.global);
   return (
-    <div>
+    <section>
       <Banner
         src={banner[3]?.background.url}
         description={banner[3]?.description}
         isLoading={isLoading}
       />
       <About />
-      <div className="flex justify-center items-center gap-2 sm:gap-4">
+      <div className="flex justify-between md:justify-around items-center gap-2 md:gap-4 my-2">
         <Message />
         <Vision />
       </div>
       <Structure />
       <Tools />
       <SupportUs />
-    </div>
+    </section>
   );
 };
 

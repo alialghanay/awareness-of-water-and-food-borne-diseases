@@ -10,9 +10,9 @@ import {
 const initialState: IEventsState = {
   isLoading: false,
   error: null,
-  reports: null,
+  reports: [],
   eventDocumentation: null,
-  videosAndPlays: null,
+  videosAndPlays: [],
   testYourKnowlodge: null,
 };
 

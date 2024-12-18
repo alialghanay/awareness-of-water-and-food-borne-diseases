@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { availableLanguages } from "localization";
 import { IGlobalState } from "state";
-import { GetBanner, GetBannerAction } from "./action";
+import { GetBannerAction } from "./action";
 
 export const initialState: IGlobalState = {
   isLoading: false,
@@ -22,9 +22,6 @@ const globalSlice = createSlice({
     },
     setLanguage(state, action: PayloadAction<availableLanguages>) {
       state.local = action.payload;
-    },
-    clearGlobalState: (state) => {
-      state = initialState;
     },
     setBanner(state, action) {
       state.banner = action.payload;
@@ -47,10 +44,5 @@ const globalSlice = createSlice({
 });
 
 export default globalSlice.reducer;
-export const {
-  setLoading,
-  setError,
-  setLanguage,
-  clearGlobalState,
-  setBanner,
-} = globalSlice.actions;
+export const { setLoading, setError, setLanguage, setBanner } =
+  globalSlice.actions;

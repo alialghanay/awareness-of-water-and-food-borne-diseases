@@ -9,12 +9,12 @@ const Learning = () => {
     router.push(`/scientific-materials#${section}`);
   };
   return (
-    <div className="bg-primary-foreground p-12">
+    <div className="bg-primary-foreground p-4 md:p-8 lg:p-16">
       <SectionTitle
-        className="text-4xl font-bold my-6"
+        className="text-2xl md:text-4xl font-bold my-6 md:my-8"
         title="الحملات التعليمية:"
       />
-      <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-14">
+      <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-7">
         <Card
           image="/svgs/varoiuse.svg"
           title="نقل العدوى"

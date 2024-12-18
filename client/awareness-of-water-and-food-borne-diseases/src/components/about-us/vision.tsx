@@ -1,13 +1,10 @@
 import { useAppSelector } from "@/hooks/redux";
 import SectionTitle from "../ui/section-title";
-import { FaRegLightbulb } from "react-icons/fa";
 import { Spinner } from "@nextui-org/spinner";
 import { Image } from "@nextui-org/image";
 
 const Vision = () => {
-  const { sections, isLoading, error } = useAppSelector(
-    (state) => state.aboutUs
-  );
+  const { sections, isLoading } = useAppSelector((state) => state.aboutUs);
   if (isLoading || sections.length === 0)
     return (
       <div className="flex justify-center items-center h-[400px]">
@@ -16,19 +13,18 @@ const Vision = () => {
     );
   const vision = sections[2];
   return (
-    <div className="bg-primary-foreground">
-      <div className="flex justify-center items-center gap-4">
+    <div className="bg-primary-foreground p-2 md:p-4 lg:p-6 size-48 md:size-72">
+      <div className="flex justify-center items-center gap-4 mb-2">
         <SectionTitle title={vision.title} />
         {vision.icon && (
           <Image
             src={process.env.IMAGE_URL + vision.icon.url}
             alt="icon"
-            width={50}
-            height={50}
+            className="size-12 md:size-16"
           />
         )}
       </div>
-      <p>{vision.paragraph}</p>
+      <p className="text-xs md:text-sm lg:text-base">{vision.paragraph}</p>
     </div>
   );
 };

@@ -14,12 +14,17 @@ const initialState: IScientificMaterialsState = {
   topics: [],
   transmissionOfInfection: null,
   treatmentAndPrevention: null,
+  topic: null,
 };
 
 export const scientificMaterialsSlice = createSlice({
   name: "scientificMaterials",
   initialState,
-  reducers: {},
+  reducers: {
+    getTopic: (state, action) => {
+      state.topic = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(GetHealthEducation.fulfilled, (state, action) => {
@@ -71,3 +76,4 @@ export const scientificMaterialsSlice = createSlice({
 });
 
 export default scientificMaterialsSlice.reducer;
+export const { getTopic } = scientificMaterialsSlice.actions;

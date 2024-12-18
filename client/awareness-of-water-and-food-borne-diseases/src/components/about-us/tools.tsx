@@ -5,9 +5,7 @@ import RichTextRenderer from "../ui/richtext-render/richtext-render";
 import { Image } from "@nextui-org/image";
 
 const Tools = () => {
-  const { sections, isLoading, error } = useAppSelector(
-    (state) => state.aboutUs
-  );
+  const { sections, isLoading } = useAppSelector((state) => state.aboutUs);
   if (isLoading || sections.length === 0)
     return (
       <div className="flex justify-center items-center h-[400px]">
@@ -16,7 +14,7 @@ const Tools = () => {
     );
   const tools = sections[3];
   return (
-    <div className="bg-primary-foreground flex justify-between items-center">
+    <div className="bg-primary-foreground flex justify-between items-center gap-2 md:gap-4 p-4 md:p-8 lg:p-16">
       <div className="flex flex-col gap-2">
         <div className="flex justify-center items-center gap-2">
           <SectionTitle title={tools.title} />
@@ -24,12 +22,11 @@ const Tools = () => {
             <Image
               src={process.env.IMAGE_URL + tools.icon.url}
               alt="icon"
-              width={50}
-              height={50}
+              className="size-12 md:size-16"
             />
           )}
         </div>
-        <p>{tools.paragraph}</p>
+        <p className="text-sm md:text-base lg:text-lg">{tools.paragraph}</p>
       </div>
       {tools.coustom_text && <RichTextRenderer document={tools.coustom_text} />}
     </div>

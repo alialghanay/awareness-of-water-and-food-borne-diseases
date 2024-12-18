@@ -12,7 +12,7 @@ const renderTextNode = (textNode: ITextNode, index: number) => {
     .join(" ");
 
   return (
-    <span className={className} key={index}>
+    <span className={`${className} text-sm md:text-base`} key={index}>
       {text}
     </span>
   );

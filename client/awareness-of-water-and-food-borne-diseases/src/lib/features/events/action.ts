@@ -3,8 +3,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const GetReports = createAsyncThunk("events/getReports", async () => {
   const axios = UseAxiosAuth();
-  const response = await axios.get("/reports");
-  return response.data;
+  const response = await axios.get("/reports?populate=*");
+  return response.data.data;
 });
 
 export const GetEventDocumentation = createAsyncThunk(
@@ -21,7 +21,7 @@ export const GetVideosAndPlays = createAsyncThunk(
   async () => {
     const axios = UseAxiosAuth();
     const response = await axios.get("/videos-and-plays?populate=*");
-    return response.data;
+    return response.data.data;
   }
 );
 
