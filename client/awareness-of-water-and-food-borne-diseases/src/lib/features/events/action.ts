@@ -1,6 +1,5 @@
 import UseAxiosAuth from "@/hooks/useAxiosAuth";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { IReport } from "collection-types";
 
 export const GetReports = createAsyncThunk("events/getReports", async () => {
   const axios = UseAxiosAuth();
