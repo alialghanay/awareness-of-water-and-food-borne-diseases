@@ -16,30 +16,40 @@ const Footer = () => {
         <div>
           <p>تصفح المزيد:</p>
           <ul>
-            <li>تعلم عن الامراض التي تنتقل عن طريق المياه والغذاء</li>
-            <li>مقالات عن اخر اخبار الحملة</li>
-            <li>تعرف على الحملة</li>
-            <li>ادعمنا عن طريق التبرع</li>
+            <li>
+              <Link href="/scientific-materials">
+                تعلم عن الامراض التي تنتقل عن طريق المياه والغذاء
+              </Link>
+            </li>
+            <li>
+              <Link href="/events">مقالات عن اخر اخبار الحملة</Link>
+            </li>
+            <li>
+              <Link href="/about-us">تعرف على الحملة</Link>
+            </li>
+            <li>
+              <Link href="/donate">ادعمنا عن طريق التبرع</Link>
+            </li>
             <li className="flex items-center gap-4">
               تواصل معنا:
               <ul className="flex items-center gap-2">
                 <li>
-                  <Link href="https://www.tiktok.com">
+                  <Link href="https://WWW.tiktok.com/@id_pat_palestine">
                     <FaTiktok />
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.facebook.com">
+                  <Link href="https://www.facebook.com/profile.php?id=61563074465999&mibextid=ZbWKwL">
                     <FaFacebook />
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.telegram.com">
+                  <Link href="https://t.me/IDPAT1">
                     <FaTelegram />
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.instagrm.com">
+                  <Link href="https://www.instagram.com/prof_abdelraouf_elmanama?igsh=MTFqcnVzaHlkcDN6OA==">
                     <FaInstagram />
                   </Link>
                 </li>
@@ -49,7 +59,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="mailto:elmanama@iugaza.edu.ps" target="_blank">
                     <FaRegEnvelope />
                   </Link>
                 </li>

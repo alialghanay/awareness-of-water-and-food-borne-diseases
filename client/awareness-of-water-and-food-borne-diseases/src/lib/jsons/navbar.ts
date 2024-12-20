@@ -55,22 +55,22 @@ const navbar = {
   socials: [
     {
       title: "Telegram",
-      url: "https://www.telegram.com",
+      url: "https://t.me/IDPAT1",
       icon: FaTelegram,
     },
     {
       title: "Facebook",
-      url: "https://www.facebook.com",
+      url: "https://www.facebook.com/profile.php?id=61563074465999&mibextid=ZbWKwL",
       icon: FaFacebook,
     },
     {
       title: "Instagram",
-      url: "https://www.instagram.com",
+      url: "https://www.instagram.com/prof_abdelraouf_elmanama?igsh=MTFqcnVzaHlkcDN6OA==",
       icon: FaInstagram,
     },
     {
       title: "Tiktok",
-      url: "https://www.tiktok.com",
+      url: "https://WWW.tiktok.com/@id_pat_palestine",
       icon: FaTiktok,
     },
   ],

@@ -18,11 +18,11 @@ const Treatment = () => {
     <div className="flex flex-col gap-7 p-4 md:p-8 lg:p-16">
       <SectionTitle title={treatmentAndPrevention.title} />
       <RichTextRenderer document={treatmentAndPrevention.content} />
-      <div className="w-full flex justify-center items-center">
+      {/* <div className="w-full flex justify-center items-center">
         <Button variant="costum" className="border border-primary text-primary">
           تعلم أكثـــر
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

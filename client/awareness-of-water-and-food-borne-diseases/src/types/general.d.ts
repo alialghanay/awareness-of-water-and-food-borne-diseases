@@ -27,6 +27,7 @@ declare module "general" {
     date: string;
     title: string;
     image: string;
+    onClick: () => void;
     buttonString?: string;
   }
   interface IImageViewer {

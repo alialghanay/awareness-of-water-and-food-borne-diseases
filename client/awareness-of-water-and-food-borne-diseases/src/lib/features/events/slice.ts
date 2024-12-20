@@ -14,12 +14,17 @@ const initialState: IEventsState = {
   eventDocumentation: null,
   videosAndPlays: [],
   testYourKnowlodge: null,
+  report: null,
 };
 
 const eventsSlice = createSlice({
   name: "events",
   initialState,
-  reducers: {},
+  reducers: {
+    getReport: (state, action) => {
+      state.report = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(GetReports.fulfilled, (state, action) => {
@@ -70,3 +75,4 @@ const eventsSlice = createSlice({
 });
 
 export default eventsSlice.reducer;
+export const { getReport } = eventsSlice.actions;

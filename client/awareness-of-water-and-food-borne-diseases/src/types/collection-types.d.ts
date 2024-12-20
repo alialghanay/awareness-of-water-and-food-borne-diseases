@@ -15,14 +15,19 @@ declare module "collection-types" {
   }
   export interface IReport {
     id: number;
+    documentId: string;
     title: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    locale: string;
     brief_description: string;
     description: string;
-    brief_description: IContentNode;
-    image: IStrapiImage;
-    icon: IStrapiImage;
+    sections: string;
     image_title: string;
-    attachments: null;
+    icon: IStrapiImage;
+    image: IStrapiImage | null;
+    attachment: IStrapiAttachment[] | null;
   }
   export interface ITopic {
     id: number;
@@ -38,11 +43,19 @@ declare module "collection-types" {
     image_title: string;
     icon: IStrapiImage;
     image: IStrapiImage[] | null;
-    attachment: null;
+    attachment: IStrapiAttachment[] | null;
   }
   export interface IVideosAndPlays {
     id: number;
     title: string;
     video: IStrapiImage;
+  }
+
+  export interface IStrapiAttachment {
+    id: number;
+    attributes: {
+      url: string;
+      mime: string;
+    };
   }
 }

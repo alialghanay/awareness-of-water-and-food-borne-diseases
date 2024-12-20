@@ -36,6 +36,7 @@ declare module "state" {
     eventDocumentation: IEventDocumentation | null;
     videosAndPlays: IVideosAndPlays[];
     testYourKnowlodge: ITestYourKnowlodge | null;
+    report: IReport | null;
   }
   export interface IScientificMaterialsState extends IState {
     healthEducation: IHealthEducation | null;
