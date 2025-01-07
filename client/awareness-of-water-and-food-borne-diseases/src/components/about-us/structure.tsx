@@ -12,11 +12,11 @@ const Structure = () => {
         <Spinner size="lg" />
       </div>
     );
-  const structure = sections[4];
+  const structure = sections[2];
   return (
     <div className="p-4 md:p-8 lg:p-16">
       <div className="flex justify-start items-center gap-4 mb-2 md:mb-4 lg:mb-6">
-        <SectionTitle title="هيكلية الحملة:" />
+        <SectionTitle title={structure.title} />
         {structure.icon && (
           <Image
             src={process.env.IMAGE_URL + structure.icon.url}

@@ -16,8 +16,9 @@ const aboutUsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(GetSections.fulfilled, (state, action) => {
+        console.log(action.payload);
         state.sections = action.payload.sort(
-          (a: IAboutUs, b: IAboutUs) => a.id - b.id
+          (a: IAboutUs, b: IAboutUs) => a.id_to_use - b.id_to_use
         );
         state.isLoading = false;
       })

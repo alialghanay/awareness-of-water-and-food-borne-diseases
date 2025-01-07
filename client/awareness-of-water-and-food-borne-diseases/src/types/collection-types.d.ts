@@ -2,6 +2,7 @@ declare module "collection-types" {
   import { IContentNode, IStrapiImage } from "general";
   export interface IAboutUs {
     id: number;
+    id_to_use: number;
     title: string;
     paragraph: string;
     btn: boolean | null;
@@ -10,6 +11,7 @@ declare module "collection-types" {
   }
   export interface IBanner {
     id: number;
+    id_to_use: number;
     background: IStrapiImage;
     description: string;
   }

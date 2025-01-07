@@ -29,7 +29,7 @@ const globalSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(GetBannerAction.fulfilled, (state, action) => {
-      state.banner = action.payload;
+      state.banner = action.payload.sort((a, b) => a.id_to_use - b.id_to_use);
       state.isLoading = false;
       state.error = null;
     });
