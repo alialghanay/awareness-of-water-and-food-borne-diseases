@@ -4,6 +4,7 @@ import RichTextRenderer from "@/components/ui/richtext-render/richtext-render";
 import SectionTitle from "@/components/ui/section-title";
 import { useAppSelector } from "@/hooks/redux";
 import { Spinner } from "@nextui-org/spinner";
+import Link from "next/link";
 
 const Goals = () => {
   const { goal, isLoading } = useAppSelector((state) => state.home);
@@ -22,8 +23,9 @@ const Goals = () => {
           size="sm"
           variant="costum"
           className="border border-primary text-primary"
+          asChild
         >
-          اعرف المزيد عن مهمتنـا
+          <Link href="/about-us">اعرف المزيد عن مهمتنـا</Link>
         </Button>
       </div>
     </div>
