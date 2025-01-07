@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IAboutUsState } from "state";
 import { GetSections } from "./action";
+import { IAboutUs } from "collection-types";
 
 const initialState: IAboutUsState = {
   isLoading: false,
@@ -15,7 +16,9 @@ const aboutUsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(GetSections.fulfilled, (state, action) => {
-        state.sections = action.payload;
+        state.sections = action.payload.sort(
+          (a: IAboutUs, b: IAboutUs) => a.id - b.id
+        );
         state.isLoading = false;
       })
       .addCase(GetSections.pending, (state) => {
