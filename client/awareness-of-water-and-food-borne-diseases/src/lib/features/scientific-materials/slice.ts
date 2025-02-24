@@ -40,7 +40,33 @@ export const scientificMaterialsSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(GetTopics.fulfilled, (state, action) => {
-        state.topics = action.payload;
+        const fixed = action.payload.map((topic) => {
+          if (!topic.icon) {
+            return {
+              ...topic,
+              icon: {
+                id: 0,
+                documentId: "",
+                name: "",
+                alternativeText: "",
+                caption: "",
+                width: 0,
+                height: 0,
+                formats: {
+                  thumbnail: {
+                    name: "",
+                    hash: "",
+                    ext: "",
+                    mime: "",
+                  },
+                },
+                url: "",
+              },
+            };
+          }
+          return topic;
+        });
+        state.topics = fixed;
         state.isLoading = false;
       })
       .addCase(GetTopics.pending, (state) => {

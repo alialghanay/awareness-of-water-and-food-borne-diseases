@@ -24,11 +24,13 @@ const TopicUi = () => {
           title={topic.title}
           className="text-4xl md:text-6xl font-extrabold text-primary"
         />
-        <Image
-          src={process.env.IMAGE_URL + topic.icon.url}
-          className="w-16 md:w-20"
-          alt="icon"
-        />
+        {topic.icon.url && (
+          <Image
+            src={process.env.IMAGE_URL + topic.icon.url}
+            className="w-16 md:w-20"
+            alt="icon"
+          />
+        )}
       </div>
       <p className="text-xl md:text-2xl p-4 md:p-8 lg:p-16">
         {topic.description}
