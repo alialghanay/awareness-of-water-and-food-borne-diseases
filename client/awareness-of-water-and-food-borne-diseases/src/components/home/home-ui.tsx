@@ -22,7 +22,6 @@ const HomeUi = () => {
   }, [dispatch]);
   return (
     <section>
-      <p>Hello World</p>
       <Banner
         src={banner[0]?.background.url}
         description={banner[0]?.description}
