@@ -29,7 +29,7 @@ const Cleanliness = () => {
         className="text-2xl md:text-4xl font-bold my-8 md:my-12"
         title="النظافة الشخصية:"
       />
-      <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-14">
+      <div className="flex flex-wrap justify-center items-center gap-10">
         {topics.map((topic) => (
           <Card
             key={topic.id}

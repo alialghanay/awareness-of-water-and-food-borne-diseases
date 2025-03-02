@@ -18,7 +18,7 @@ const Card = ({
       className={
         isCursorCard
           ? "w-28 h-20 md:w-48 md:h-36 lg:w-56 lg:h-40 flex flex-col justify-center items-center border border-primary bg-gradient-to-br from-white to-[#DDE6CF] cursor-pointer shadow-lg rounded"
-          : "p-6 w-32 md:w-56 lg:w-64 flex flex-col justify-center items-center border border-primary bg-gradient-to-br from-white to-[#DDE6CF] rounded"
+          : "p-6 w-3/4 sm:w-1/3 lg:w-1/4 flex flex-col justify-center items-center border border-primary bg-gradient-to-br from-white to-[#DDE6CF] rounded"
       }
       onClick={onClick}
     >
