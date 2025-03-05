@@ -20,7 +20,7 @@ const navbar = {
       },
       {
         title: "ادعمنا",
-        url: "https://www.paypal.com",
+        url: "https://gofund.me/d2913bef",
       },
       {
         title: "من نحن؟",
@@ -44,7 +44,7 @@ const navbar = {
       },
       {
         title: "Support Us",
-        url: "https://www.paypal.com",
+        url: "https://gofund.me/d2913bef",
       },
       {
         title: "About Us",
